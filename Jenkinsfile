@@ -6,13 +6,13 @@ pipeline {
     }
     stages {
         stage('elasticache Pipeline') {
-            when {
-                anyOf {
-                    changeset "components/elasticache/**"
-                    changeset "terraform_modules/elasticache/**"
-                    triggeredBy cause: "UserIdCause"
-                }
-            }
+            // when {
+            //     anyOf {
+            //         changeset "components/elasticache/**"
+            //         changeset "terraform_modules/elasticache/**"
+            //         triggeredBy cause: "UserIdCause"
+            //     }
+            // }
             stages {
                 stage('Build elasticache') {
                     steps {

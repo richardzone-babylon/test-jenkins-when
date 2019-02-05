@@ -16,6 +16,13 @@ pipeline {
             stages {
                 stage('Build elasticache') {
                     steps {
+                        echo '----------------------'
+                        echo "${currentBuild.buildCauses}" // same as currentBuild.getBuildCauses()
+                        echo '----------------------'
+                        echo "${currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')}"
+                        echo '----------------------'
+                        echo "${currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause')}"
+                        echo '----------------------'
                         echo 'build elasticache'
                     }
                 }
